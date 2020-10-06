@@ -20,6 +20,18 @@ Output: -1
 Explanation:
 There is no index that satisfies the conditions in the problem statement.
 """
+
+
+# I understand that we want to find the pivot that is
+# The index corresponding to the sum of #rs on the left equaled to the sum of numbers to the right
+# Plan
+# Make a foor loop and check if the starting number up to the current index is equaled to the index to sum of the remaining numbers
+# ex) for some nums = [1,2,3] check that sum(nums[0:index]) == sum(nums[index+1:])
+#
 def pivot_index(nums):
-    # Your code here
+    pivot = -1
+    for index in range(1, len(nums)):
+        if index + 1 < len(nums) and sum(nums[0:index]) == sum(nums[index + 1:]):
+            pivot = index
+    return pivot
 
