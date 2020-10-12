@@ -28,11 +28,12 @@ def buyAndSellStock(prices):
     for i in range(1, total_stocks):
         if (prices[i] - min_element) > max_profit:
             max_profit = prices[i] - min_element
-        #This line updates the minimum element
-        #Ensures that every time were comparing fairly to the max profit
+        # This line updates the minimum element
+        # Ensures that every time were comparing fairly to the max profit
         if prices[i] < min_element:
             min_element = prices[i]
     return max_profit
+
 
 # Understand: we want to replace the letter to the one that comes after in the alpah bet
 # use asc2 codes to identify the character, specifcally use ord in python
@@ -85,3 +86,14 @@ def validParenthesesSequence(s):
     return flag
 
 # https://www.geeksforgeeks.org/check-if-given-parentheses-expression-is-balanced-or-not/
+
+def buyAndSellStock(prices):
+    max_profit = 0
+    min = price[0]
+    for index, price in enumerate(prices):
+        if price < min:
+            min = price
+            # max profit is still 0 b/c price is found to be a  min
+        elif price - min > max_profit:
+            max_profit = price - min
+    return max_profit
